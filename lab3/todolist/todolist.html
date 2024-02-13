@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>ToDo List</h1>
+    <form>
+        <label for="task-input">Be Productive:</label>
+        <input type="text" id="task-input" name="task-input" placeholder="New Task"/>
+        <button>Add</button>
+    </form>
+    <ul id="task-list"></ul>
+    <script>
+        const form = document.querySelector('form');
+        const taskList = document.querySelector('#task-list');
+
+        function addTask(task){
+            const listItem = document.createElement('li')
+            listItem.innerHTML = `<input type="checkbox" /> <span>${task}</span> <img src="https://cdn2.iconfinder.com/data/icons/e-business-helper/240/627249-delete3-1024.png" alt="Delete" class="delete-icon"/>`;
+            taskList.appendChild(listItem)
+        }
+
+        form.addEventListener('submit', (event)=>{
+            event.preventDefault();
+            const input = document.querySelector('#task-input');
+            const task = input.value;
+            addTask(task);
+            input.value = ''
+        })
+        
+        taskList.addEventListener('click', (event)=>{
+            if(event.target.classList.contains('delete-icon')){
+                const listItem = event.target.parentElement
+                taskList.removeChild(listItem);
+            }
+        })
+    </script>
+</body>
+</html>
