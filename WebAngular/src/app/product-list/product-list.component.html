@@ -1,0 +1,22 @@
+<div class="container">
+    <h2 class="title">Products</h2>
+    <div *ngFor="let product of products" class="product-container">
+        <a href={{product.ref}}><img src={{product.image}}></a>
+      <h3 class="product-title">
+        <a
+          [title]="product.name + ' details'"
+          [routerLink]="['/products', product.id]">
+          {{ product.name }}
+        </a>
+      </h3>
+      <p *ngIf="product.description">Description: {{ product.description }}</p>
+      <button type="button" (click)="share(product.ref)" class="share-btn">Share with Telegram</button>
+      <!--<app-product-alerts [product]="product" (notify)="onNotify()">
+      </app-product-alerts>-->
+    </div>
+</div>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
