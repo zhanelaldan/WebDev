@@ -2,17 +2,17 @@
     <div>
         <h3><a href="{{product.url}}">{{ product.name }}</a></h3>
         <img
-                [class.img_airpods]="product.category == 'AirPods'"
-                [class.img_iphones]="product.category == 'IPhones'"
-                [class.img_macbooks]="product.category == 'MacBooks'"
-                [class.img_appleWatches]="product.category == 'Apple Watches'"
+                [class.img_airpods]="product.category == 'Perfumery'"
+                [class.img_iphones]="product.category == 'Skin care'"
+                [class.img_macbooks]="product.category == 'Hair care'"
+                [class.img_appleWatches]="product.category == 'Make-up'"
                 src="{{product.image}}">
     </div>
     <div
-            [class.airpods]="product.category == 'AirPods'"
-            [class.iphones]="product.category == 'IPhones'"
-            [class.macbooks]="product.category == 'MacBooks'"
-            [class.appleWatches]="product.category == 'Apple Watches'" class="characteristics" >
+            [class.airpods]="product.category == 'Perfumery'"
+            [class.iphones]="product.category == 'Skin care'"
+            [class.macbooks]="product.category == 'Hair care'"
+            [class.appleWatches]="product.category == 'Make-up'" class="characteristics" >
         <p *ngIf="product.description" id="descr">{{ product.description }}</p>
         <p *ngIf="product.rate">Rating: {{ product.rate }}</p>
         <div>
