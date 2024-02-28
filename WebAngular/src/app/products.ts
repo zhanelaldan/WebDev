@@ -1,153 +1,243 @@
+import { Category } from "./categories";
+
 export interface Product {
-    id: number;
-    name: string;
-    price: number;
-    description: string;
-    rating: number,
-    image: string,
-    ref: string
-  }
-  
-  export const products = [
-    {
-      id: 1,
-      image: 'https://resources.cdn-kaspi.kz/img/m/p/h70/h71/64081828085790.jpg?format=preview-large',
-      name: 'Maurice Lacroix',
-      price: 858,
-      description: 'способ отображения времени: аналоговый (стрелки) ' +
-          'тип: кварцевые ' +
-          'материал корпуса: сталь ' +
-          'противоударные: Нет ' +
-          'для кого: для мужчин ' +
-          'цвет: черный',
-      rating: 10,
-      ref: 'https://kaspi.kz/shop/p/kvartsevye-maurice-lacroix-ai1018-ss001-330-1-stal--101536013/?c=750000000'
-    },
-    {
-      id: 2,
-      image: 'https://resources.cdn-kaspi.kz/img/m/p/h8a/h33/63816324382750.jpg?format=gallery-medium',
-      name: 'ORIS',
-      price: 1150,
-      description: 'способ отображения времени: аналоговый (стрелки) ' +
-          'тип: механические ' +
-          'материал корпуса: сталь ' +
-          'противоударные: Нет ' +
-          'для кого: для мужчин ' +
-          'цвет: синий, ,черный',
-      rating: 9,
-      ref: 'https://kaspi.kz/shop/p/mehanicheskie-oris-01-798-7754-4135-07-4-24-64eb-stal--21409627/?c=750000000'
-    },
-    {
-      id: 3,
-      image: 'https://resources.cdn-kaspi.kz/img/m/p/h99/h4d/80136126431262.jpg?format=gallery-medium',
-      name: 'Bomberg',
-      price: 816,
-      description: 'способ отображения времени: аналоговый (стрелки) ' +
-          'тип: механические ' +
-          'материал корпуса: нержавеющая сталь ' +
-          'для кого: для мужчин ' +
-          'цвет: черный, ,красный',
-      rating: 8,
-      ref: 'https://kaspi.kz/shop/p/mehanicheskie-bomberg-bb-01-automatic-red-43-bomberg-nerzhavejuschaja-stal--109910270/?c=750000000'
-    },
-    {
-      id: 4,
-      image: 'https://resources.cdn-kaspi.kz/img/m/p/ha7/hcb/64029198123038.jpg?format=gallery-medium',
-      name: 'CASIO ',
-      price: 507,
-      description: 'тип: кварцевые ' +
-          'материал корпуса: сталь, ,полимер ' +
-          'для кого: для мужчин ' +
-          'цвет: черный',
-      rating: 9,
-      ref: 'https://kaspi.kz/shop/p/kvartsevye-casio-gwg-2000-1a1-stal-polimer-103304093/?c=750000000'
-    },
-    {
-      id: 5,
-      image: 'https://resources.cdn-kaspi.kz/img/m/p/h83/h41/84664359288862.jpg?format=gallery-medium',
-      name: 'CIGA ',
-      price: 644,
-      description: 'способ отображения времени: аналоговый (стрелки) ' +
-          'тип: механические ' +
-          'материал корпуса: титан ' +
-          'для кого: для мужчин ' +
-          'цвет: синий',
-      rating: 10,
-      ref: 'https://kaspi.kz/shop/p/mehanicheskie-ciga-design-u031-tu02-w6u-titan-112626420/?c=750000000'
-    },
-    {
-      id: 6,
-      image: 'https://resources.cdn-kaspi.kz/img/m/p/h80/hc8/83594035626014.jpg?format=gallery-medium',
-      name: 'DAVOSA',
-      price: 513,
-      description: 'способ отображения времени: аналоговый (стрелки) ' +
-          'тип: механические ' +
-          'материал корпуса: сталь ' +
-          'цвет: синий ' +
-          'для кого: для мужчин',
-      rating: 7,
-      ref: 'https://kaspi.kz/shop/p/mehanicheskie-davosa-16155940-stal--113175783/?c=750000000'
-    },
-    {
-      id: 7,
-      image: 'https://resources.cdn-kaspi.kz/img/m/p/h82/h7b/83144433893406.jpg?format=gallery-medium',
-      name: 'Orient RE',
-      price: 970,
-      description: 'способ отображения времени: аналоговый (стрелки) ' +
-          'тип: механические ' +
-          'материал корпуса: нержавеющая сталь ' +
-          'для кого: для мужчин ' +
-          'цвет: черный',
-      rating: 9,
-      ref: 'https://kaspi.kz/shop/p/mehanicheskie-orient-re-av0a03b00b-nerzhavejuschaja-stal--112844343/?c=750000000'
-    },
-    {
-      id: 8,
-      image: 'https://resources.cdn-kaspi.kz/img/m/p/h4e/h24/64309564309534.jpg?format=gallery-medium',
-      name: 'Raymond Wei',
-      price: 950,
-      description: 'способ отображения времени: аналоговый (стрелки) ' +
-          'тип: механические ' +
-          'материал корпуса: сталь ' +
-          'противоударные: Нет ' +
-          'для кого: для мужчин ' +
-          'цвет: бронзовый',
-      rating: 8,
-      ref: 'https://kaspi.kz/shop/p/mehanicheskie-raymond-weil-2227stc00808-stal--101877934/?c=750000000'
-    },
-    {
-      id: 9,
-      image: 'https://resources.cdn-kaspi.kz/img/m/p/hb5/h83/64064628064286.jpg?format=gallery-medium',
-      name: 'Maurice Lacroix',
-      price: 1023,
-      description: 'способ отображения времени: аналоговый (стрелки) ' +
-          'тип: кварцевые ' +
-          'материал корпуса: сталь ' +
-          'противоударные: Нет ' +
-          'для кого: для мужчин ' +
-          'цвет: серый',
-      rating: 9,
-      ref: 'https://kaspi.kz/shop/p/mehanicheskie-raymond-weil-2239stc00509-stal--101153801/?c=750000000'
-    },
-    {
-      id: 10,
-      image: 'https://resources.cdn-kaspi.kz/img/m/p/hc5/hbc/63774073356318.jpg?format=gallery-medium',
-      name: 'Tissot Ballade',
-      price: 573,
-      description: 'способ отображения времени: аналоговый (стрелки) ' +
-          'тип: механические ' +
-          'материал корпуса: сталь ' +
-          'противоударные: Нет ' +
-          'для кого: для мужчин ' +
-          'цвет: серебристый',
-      rating: 7,
-      ref:'https://kaspi.kz/shop/p/mehanicheskie-tissot-ballade-t108-408-11-037-00-stal--21406926/?c=750000000'
-    },
-  ];
-  
-  
-  /*
-  Copyright Google LLC. All Rights Reserved.
-  Use of this source code is governed by an MIT-style license that
-  can be found in the LICENSE file at https://angular.io/license
-  */
+  id: number;
+  name: string;
+  price: number;
+  description: string,
+  url: string,
+  image: string,
+  rate: number;
+  category: string;
+  likes: number;
+}
+
+export const products: Product[] = [
+  {
+    id: 1,
+    name: 'Apple iPhone 14 128Gb blue',
+    price: 420990,
+    description: "A great phone with one of the best cameras",
+    url: 'https://kaspi.kz/shop/p/apple-iphone-14-128gb-goluboi-106363150/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h8b/h41/63073057177630/apple-iphone-14-128gb-goluboj-106363150-1.jpg',
+    rate: 10,
+    category: "IPhones",
+    likes: 41,
+  },
+  {
+    id: 2,
+    name: 'Apple iPhone 13 128Gb pink',
+    price: 370990,
+    description: 'iPhone 13 in pink for the hottest girls. By purchasing it, you will radiate style and coolness for 1000 kilometers.',
+    url: 'https://kaspi.kz/shop/p/apple-iphone-13-128gb-rozovyi-102298145/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/ha0/h0e/46392660819998/apple-iphone-13-128gb-rozovyj-102298145-1-Container.jpg',
+    rate: 8,
+    category: "IPhones",
+    likes: 29,
+  },
+  {
+    id: 3,
+    name: 'Apple iPhone 14 128Gb lilac',
+    price: 419790,
+    description: 'The Redmond RMC-M252 multicooker has relatively compact dimensions (27.5x27.5x29.5 cm), while its power is 860 watts.',
+    url: 'https://kaspi.kz/shop/p/apple-iphone-14-128gb-sirenevyi-106363117/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h5e/ha3/63072545734686/apple-iphone-14-128gb-sirenevyj-106363117-1.jpg',
+    rate: 9,
+    category: "IPhones",
+    likes: 15,
+  },
+  {
+    id: 4,
+    name: 'Apple iPhone 11 64Gb Slim Box white',
+    price: 264490,
+    description: 'The Centek CT-1209 centrifugal juicer will be an excellent addition to your small household appliances for the kitchen and will give you the opportunity to delight your household with freshly squeezed juices every day.',
+    url: 'https://kaspi.kz/shop/p/apple-iphone-11-64gb-slim-box-belyi-100692384/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hcf/h0c/32579627352094/apple-iphone-11-64gb-slim-box-belyj-100692384-1-Container.jpg',
+    rate: 9,
+    category: "IPhones",
+    likes: 36,
+  },
+  {
+    id: 5,
+    name: 'Apple iPhone 13 128Gb Blue',
+    price: 375100,
+    description: 'Smartphones manufactured by Apple Corporation. The iPhone 13 is the base model of the 15th generation. It contains an Apple A15 processor with 15 billion transistors. It was introduced on September 14, 2021, along with its "younger brother" iPhone 13 mini and "professional" models iPhone 13 Pro and iPhone 13 Pro Max.',
+    url: 'https://kaspi.kz/shop/p/apple-iphone-13-128gb-sinii-102298364/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h91/h1d/46392661737502/apple-iphone-13-128gb-sinij-102298364-1-Container.jpg',
+    rate: 10,
+    category: "IPhones",
+    likes: 28,
+  },
+  {
+    id: 6,
+    name: 'MacBook Air 13 MGND3 gold',
+    price: 490450,
+    description: 'The 2020 13-inch MacBook Air with the M1 processor has been a sensation since its release. Incredibly thin (only 41mm at its thinnest point) and light (1.29kg), it\'s completely silent and uses a 30W adapter to charge your computer.',
+    url: 'https://kaspi.kz/shop/p/apple-macbook-air-13-mgnd3-zolotistyi-100797576/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hfd/h54/33286638272542/apple-macbook-air-2020-13-3-mgnd3-zolotistyj-100797576-1-Container.jpg',
+    rate: 10,
+    category: "MacBooks",
+    likes: 21,
+  },
+  {
+    id: 7,
+    name: 'Apple MacBook Pro 14 MKGP3 gray',
+    price: 990650,
+    description: 'The stunning 14.2-inch Liquid Retina XDR display and a wide range of ports add to the benefits. The Apple M1 Pro chip is a grandiose expansion of computing and graphics capabilities of a computer, accelerating machine learning operations.',
+    url: 'https://kaspi.kz/shop/p/apple-macbook-pro-14-mkgp3-seryi-102866247/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hbf/h8a/47153374199838/apple-macbook-pro-14-mkgp3-seryj-102866247-1.jpg',
+    rate: 9,
+    category: "MacBooks",
+    likes: 22,
+  },
+  {
+    id: 8,
+    name: 'MacBook Air 13 MLXY3 Silver',
+    price: 629450,
+    description: 'Redesigned with the next-generation M2 chip, MacBook Air is amazingly thin and delivers exceptional speed and power efficiency in a durable all-aluminum chassis. It\'s a super-fast, super-powerful laptop that lets you work, play, or create whatever you want, anywhere.',
+    url: 'https://kaspi.kz/shop/p/apple-macbook-air-13-mlxy3-serebristyi-106110064/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hfa/h91/61792617299998/apple-macbook-air-13-mlxy3-serebristyj-106110064-1.jpg',
+    rate: 9,
+    category: "MacBooks",
+    likes: 32,
+  },
+  {
+    id: 9,
+    name: 'MacBook Air 13 MGN63 gray',
+    price: 480500,
+    description: 'Small chip. Big breakthrough The first chip designed specifically for the Mac. Amazingly, the Apple M1 system-on-a-chip packs 16 billion transistors and integrates a CPU, GPU, Neural Engine, I/O controllers, and a host of other components.',
+    url: 'https://kaspi.kz/shop/p/apple-macbook-air-13-mgn63-seryi-100797845/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h65/h0f/33125684084766/apple-macbook-air-2020-13-3-mgn63-seryj-100797845-1-Container.jpg',
+    rate: 10,
+    category: "MacBooks",
+    likes: 20,
+  },
+  {
+    id: 10,
+    name: 'Apple MacBook Pro 13 MID 82 Laptop Grey',
+    price: 10,
+    description: 'The Apple MacBook Pro laptop provides extensive functionality for solving various tasks both in the office and at home, and during trips. The hardware platform with an M1 processor and 8 GB of RAM memory provides high-level performance and performance.',
+    url: 'https://kaspi.kz/shop/p/apple-macbook-pro-13-myd82-seryi-100797630/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h54/hd7/33090953773086/apple-macbook-pro-13-myd82-seryi-100797630-1.jpg',
+    rate: 10,
+    category: "MacBooks",
+    likes: 34,
+  },
+  {
+    id: 11,
+    name: 'Smart Watch Apple Iwatch SE 2nd Gen 40mm Gold',
+    price: 159990,
+    description: 'A simplified and cheaper version of the sixth generation of the Apple Iwatch smartwatch, released on September 15, 2020. The first generation of the "SE" series.',
+    url: 'https://kaspi.kz/shop/p/apple-watch-se-2nd-gen-40-mm-zolotistyi-106362759/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h97/h46/62711073407006/apple-watch-se-2nd-generation-40-mm-zolotistyj-106362759-1.jpg',
+    rate: 10,
+    category: "Apple Watches",
+    likes: 34,
+  },
+  {
+    id: 12,
+    name: 'Smart Watch Apple Iwatch SE 44mm Grey',
+    price: 155780,
+    description: 'A large Retina display that will fit everything you need. Advanced sensors to track any physical activity. Useful functions that help monitor health indicators and take care of your safety.',
+    url: 'https://kaspi.kz/shop/p/apple-watch-se-44-mm-seryi-100568195/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/img/m/p/he4/hb2/63895429578782.jpg?format=gallery-medium',
+    rate: 10,
+    category: "Apple Watches",
+    likes: 45,
+  },
+  {
+    id: 13,
+    name: 'Smart Watch Apple Iwatch SE 40mm Silver-Blue',
+    price: 175700,
+    description: '',
+    url: 'https://kaspi.kz/shop/p/apple-watch-se-40-mm-serebristyi-sinii-102602475/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/he0/h19/46601570975774/apple-watch-se-40mm-silver-aluminium-case-sinij-102602475-1.jpg',
+    rate: 9,
+    category: "Apple Watches",
+    likes: 12,
+  },
+  {
+    id: 14,
+    name: 'Apple Watch SE 2nd Gen 40mm Gold',
+    price: 159990,
+    description: 'The current simplified and cheaper version of the eighth generation of the Apple Iwatch smartwatch, released on September 7, 2022. The second generation of the "SE" series.',
+    url: 'https://kaspi.kz/shop/p/apple-watch-se-2nd-gen-40-mm-zolotistyi-106362759/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h97/h46/62711073407006/apple-watch-se-2nd-generation-40-mm-zolotistyj-106362759-1.jpg',
+    rate: 8,
+    category: "Apple Watches",
+    likes: 19,
+  },
+  {
+    id: 15,
+    name: 'Apple Watch Series 8 45 mm Aluminum gold',
+    price: 231990,
+    description: 'Stay ahead of everyone with the new Apple Watch Series 8, premium GPS smart watches for running and triathlon, which now also have the ability to charge from the sun thanks to the Power Glass™ lens.',
+    url: 'https://kaspi.kz/shop/p/apple-watch-series-8-45-mm-aluminum-zolotistyi-106585021/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hbc/h23/63158668492830/apple-watch-series-8-45-mm-aluminum-zolotistyj-106585021-1.jpg',
+    rate: 9,
+    category: "Apple Watches",
+    likes: 30,
+  },
+  {
+    id: 16,
+    name: 'Apple Earpods Pro 2nd generation headphones white',
+    price: 119690,
+    description: 'Apple Earpods Pro 2nd are unique headphones with active noise reduction technology that continuously optimize the sound taking into account the shape of your ear and the position of the earbuds. They perfectly drown out external noises, so you can completely immerse yourself in the music.',
+    url: 'https://kaspi.kz/shop/p/apple-airpods-pro-2nd-generation-belyi-106362968/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/img/m/p/hb7/h5e/64511113199646.jpg?format=gallery-medium',
+    rate: 10,
+    category: "AirPods",
+    likes: 12,
+  },
+  {
+    id: 17,
+    name: 'Apple Earpods Max Headphones Green',
+    price: 365865,
+    description: 'The Apple Earpods Max Bluetooth headset will be able to completely change your idea of full-size headphones. This model has been developed using first-class materials and advanced technologies.',
+    url: 'https://kaspi.kz/shop/p/apple-airpods-max-zelenyi-101161547/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h56/hfd/33885803315230/apple-airpods-max-zelenyj-101161547-2-Container.jpg',
+    rate: 10,
+    category: "AirPods",
+    likes: 12,
+  },
+  {
+    id: 18,
+    name: 'Apple Earpods Pro Headphones White',
+    price: 103155,
+    description: 'AirPods Pro are unique headphones with active noise reduction technology that continuously optimize the sound taking into account the shape of your ear and the position of the earbuds. They perfectly drown out external noises, so you can completely immerse yourself in the music.',
+    url: 'https://kaspi.kz/shop/p/apple-airpods-pro-belyi-4804718/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/img/m/p/h34/ha2/63785534455838.jpg?format=gallery-medium',
+    rate: 9,
+    category: "AirPods",
+    likes: 17,
+  },
+  {
+    id: 19,
+    name: 'Apple Earpods Max Headphones Blue',
+    price: 361160,
+    description: 'The Apple Earpods Max Bluetooth headset will be able to completely change your idea of full-size headphones. This model has been developed using first-class materials and advanced technologies.',
+    url: 'https://kaspi.kz/shop/p/apple-airpods-max-sinii-101180956/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hba/h2e/46659800760350/apple-airpods-max-sinij-101180956-2-Container.jpg',
+    rate: 10,
+    category: "AirPods",
+    likes: 15,
+  },
+  {
+    id: 20,
+    name: 'Headphones Apple AirPods Pro with Magsafe Charging Case white',
+    price: 104420,
+    description: 'The dynamic driver developed by Apple uses a special amplifier, providing incredible sound detail. You will clearly hear the entire spectrum — from deep, rich bass to crystal clear high notes.',
+    url: 'https://kaspi.kz/shop/p/apple-airpods-pro-with-magsafe-charging-case-belyi-102891649/?c=750000000#!/item',
+    image: 'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h39/h45/47209266348062/apple-airpods-pro-magsafe-charging-case-belyj-102891649-1.jpg',
+    rate: 8,
+    category: "AirPods",
+    likes: 16,
+  },
+];
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/

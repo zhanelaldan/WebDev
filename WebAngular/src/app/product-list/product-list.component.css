@@ -7,7 +7,7 @@ img {
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #fbd1d1;
 }
 
 .title {
@@ -44,8 +44,8 @@ img {
 }
 
 .share-btn {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #e75480;
+    color: #fbd1d1;
     border: none;
     border-radius: 5px;
     padding: 5px 10px;
@@ -54,7 +54,7 @@ img {
 }
 
 .share-btn:hover {
-    background-color: #0056b3;
+    background-color: #ffb190;
 }
 
 .product-container .product-title {

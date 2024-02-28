@@ -1,0 +1,43 @@
+.img_iphones {
+    width: 230px;
+    height: 100%;
+}
+
+.img_macbooks {
+    width: 380px;
+    height: 100%;
+}
+
+.img_appleWatches {
+    width: 250px;
+    height: 90%;
+}
+
+.img_airpods {
+    width: 250px;
+    height: 90%;
+    margin-top: 30px;
+}
+
+.iphones {
+    margin-top: 20px;
+    margin-top: -320px;
+    margin-left: 300px;
+    margin-bottom: 70px;
+}
+
+.macbooks {
+    margin-top: -260px;
+    margin-left: 400px;
+}
+
+.appleWatches {
+    margin-top: -300px;
+    margin-left: 300px;
+    margin-bottom: 50px;
+}
+
+.airpods {
+    margin-top: -300px;
+    margin-left: 300px;
+}

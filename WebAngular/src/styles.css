@@ -3,7 +3,7 @@
 
 * {
     font-family: 'Roboto', Arial, sans-serif;
-    color: #616161;
+    color: #a94064;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -44,7 +44,7 @@
   
   a {
     cursor: pointer;
-    color: #1976d2;
+    color: #a94064;
     text-decoration: none;
   }
   
@@ -59,7 +59,7 @@
     border-radius: 2px;
     padding: 8px;
     margin-bottom: 16px;
-    border: 1px solid #BDBDBD;
+    border: 1px solid #a94064;
   }
   
   label {
@@ -78,8 +78,8 @@
     border-radius: 2px;
     font-size: 14px;
     cursor: pointer;
-    background-color: #1976d2;
-    color: white;
+    background-color: #a94064;
+    color: #ffd1dc;
     border: none;
   }
   
@@ -96,12 +96,12 @@
   /* Fancy Button */
   
   .fancy-button {
-    background-color: white;
-    color: #1976d2;
+    background-color: #ffd1dc;
+    color: #a94064;
   }
   
   .fancy-button i.material-icons {
-    color: #1976d2;
+    color: #a94064;
     padding-right: 4px;
   }
   
@@ -110,7 +110,7 @@
   app-top-bar {
     width: 100%;
     height: 68px;
-    background-color: #1976d2;
+    background-color: #e75480;
     padding: 16px;
     display: flex;
     flex-direction: row;
@@ -119,7 +119,7 @@
   }
   
   app-top-bar h1 {
-    color: white;
+    color: #ffd1dc;
     margin: 0;
   }
   
@@ -135,7 +135,7 @@
     padding: 16px 32px;
     margin-bottom: 8px;
     border-radius: 2px;
-    background-color: #EEEEEE;
+    background-color: #ffd1dc;
   }
   
   

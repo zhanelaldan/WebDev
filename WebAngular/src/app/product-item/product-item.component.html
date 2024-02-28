@@ -1,0 +1,32 @@
+<div *ngIf="product != undefined" id="item">
+    <div>
+        <h3><a href="{{product.url}}">{{ product.name }}</a></h3>
+        <img
+                [class.img_airpods]="product.category == 'AirPods'"
+                [class.img_iphones]="product.category == 'IPhones'"
+                [class.img_macbooks]="product.category == 'MacBooks'"
+                [class.img_appleWatches]="product.category == 'Apple Watches'"
+                src="{{product.image}}">
+    </div>
+    <div
+            [class.airpods]="product.category == 'AirPods'"
+            [class.iphones]="product.category == 'IPhones'"
+            [class.macbooks]="product.category == 'MacBooks'"
+            [class.appleWatches]="product.category == 'Apple Watches'" class="characteristics" >
+        <p *ngIf="product.description" id="descr">{{ product.description }}</p>
+        <p *ngIf="product.rate">Rating: {{ product.rate }}</p>
+        <div>
+            <p>Likes: {{ product.likes }}</p>
+            <button (click)="pressLike()">❤</button>
+        </div><br>
+        <div class="buttons">
+            <button type="button" id="share" (click)="share(product)">
+                Share
+            </button><br><br>
+            <button type="button" id="remove" style = "margin-bottom: 50px;" (click)="remove(product)">
+                Remove
+            </button>
+        </div>
+    </div>
+
+</div>

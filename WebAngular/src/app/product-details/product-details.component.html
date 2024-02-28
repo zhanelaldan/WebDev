@@ -2,6 +2,12 @@
 
 <div *ngIf="product">
   <h3>{{ product.name }}</h3>
+    <div class="gallery">
+        <img src="{{product.img1}}">
+        <img src="{{product.img2}}">
+        <img src="{{product.img3}}">
+    </div>
+
   <h4>{{ product.price | currency }}</h4>
   <p>{{ product.description }}</p>
   <button type="button" (click)="addToCart(product)">Buy</button>

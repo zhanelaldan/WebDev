@@ -1,25 +1,23 @@
-import { Component } from '@angular/core';
-
-import { products } from '../products';
+import { Component, Input, Output } from '@angular/core';
+import { Product, products } from '../products';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css'],
+  styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
-  products = [...products];
 
-  share(link: string) {
-    const shareMessage = `Product: ${link}`;
-    const telegramLink = `https://t.me/share/url?url=${encodeURIComponent(shareMessage)}`;
-    window.location.href = telegramLink;
+export class ProductListComponent {
+  @Input() category: string | undefined;
+  products = products;
+
+  share(product: Product) {
+    window.open(`https://t.me/share/url?url=${product.url}&text=xssxcfscxscsc`);
   }
-  onNotify() {
-    window.alert('You will be notified when the product goes on sale');
+  remove(product: Product) {
+    this.products = this.products.filter( (x) => x.id !== product.id);
   }
 }
-
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
