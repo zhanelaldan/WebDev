@@ -1,0 +1,17 @@
+<div class="container">
+    <fieldset>
+      <label for="title">Title</label>
+      <input type="text" [(ngModel)]="newAlbum.title" id="title">
+      <button (click)="addAlbum()">Add album</button>
+    </fieldset>
+  
+    <ul *ngIf="loaded; else loading" >
+      <li *ngFor="let album of albums">
+        <a [routerLink]="['/albums', album.id]">{{album.id}} Album</a>
+        <button (click)="deleteAlbum(album.id)">x</button>
+      </li>
+    </ul>
+    <ng-template #loading>
+      <p>Albums are loading...</p>
+    </ng-template>
+  </div>

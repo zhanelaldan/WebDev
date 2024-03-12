@@ -1,0 +1,21 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Отображение горизонтально */
+    justify-content: center;
+  }
+  
+  li {
+    margin-right: 30px; /* Пространство между элементами */
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+    font-size: 30px;
+  }
+  
+  a:hover {
+    color: #4a94f6;
+  }
+  
