@@ -1,0 +1,64 @@
+.about-container {
+    margin: 20px auto;
+    max-width: 1000px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9; /* Цвет фона */
+  }
+  
+  .about-content {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+  
+  .about-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .about-list li {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Цвет фона */
+  }
+  
+  .about-list li img {
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .about-list li h3 {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333; /* Цвет текста */
+  }
+  
+  .about-list li p {
+    margin: 0;
+    color: #666; /* Цвет текста */
+  }
+  
+  .contact-us-button {
+    margin: 20px auto;
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    text-align: center; /* Выравнивание текста по центру */
+    width: 200px; /* Ширина кнопки */
+  }
+  
+  .contact-us-button:hover {
+    background-color: #0056b3; /* Изменение цвета при наведении */
+  }

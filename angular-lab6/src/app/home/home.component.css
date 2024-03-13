@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif; /* Шрифт */
+    background-color: #f8f9fa; /* Цвет фона */
+    margin: 0; /* Убираем отступы по умолчанию */
+    padding: 0; /* Убираем внутренние отступы по умолчанию */
+  }
+  
+  .home-works-container {
+    max-width: 800px; /* Максимальная ширина контейнера */
+    margin: 20px auto; /* Центрируем контейнер по горизонтали */
+    padding: 20px; /* Внутренние отступы */
+    background-color: #fff; /* Цвет фона контейнера */
+    border: 1px solid #ddd; /* Граница */
+    border-radius: 5px; /* Скругление углов */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень */
+  }
+  
+  h1 {
+    font-size: 24px; /* Размер шрифта */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-bottom: 20px; /* Отступ снизу */
+  }
+  
+  p {
+    font-size: 16px; /* Размер шрифта */
+    line-height: 1.5; /* Высота строки */
+    text-align: center; /* Выравнивание текста по центру */
+    color: #333; /* Цвет текста */
+    margin-bottom: 20px; /* Отступ снизу */
+  }
+  
+  .resources-list {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем внутренние отступы списка */
+    margin: 0; /* Убираем внешние отступы списка */
+    display: flex; /* Отображаем элементы списка в ряд */
+    justify-content: center; /* Выравниваем элементы списка по центру */
+  }
+  
+  .resources-list li {
+    margin: 0 10px; /* Отступы между элементами списка */
+  }
+  
+  .resources-list img {
+    max-width: 150px; /* Максимальная ширина изображения */
+    display: block; /* Отображение изображения как блока */
+    margin: 0 auto; /* Выравнивание изображения по центру */
+  }
+  
+  .resources-list h3 {
+    font-size: 16px; /* Размер шрифта */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-top: 10px; /* Отступ сверху */
+  }
+  
+  .more-resources-button {
+    display: block; /* Отображение кнопки как блока */
+    margin: 20px auto; /* Центрируем кнопку по горизонтали */
+    padding: 10px 20px; /* Внутренние отступы */
+    font-size: 16px; /* Размер шрифта */
+    border: 1px solid #007bff; /* Граница */
+    border-radius: 5px; /* Скругление углов */
+    background-color: #007bff; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    cursor: pointer; /* Курсор при наведении */
+    text-align: center; /* Выравнивание текста по центру */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+  }
+  
+  .more-resources-button:hover {
+    background-color: #0056b3; /* Изменяем цвет фона при наведении */
+  }

@@ -1,26 +1,69 @@
-img{
-    width: 300px;
-  }
+
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  margin: 0 auto; /* Center the gallery horizontally */
+  width: 80%; /* Adjust width as needed */
+}
+
+.back-button {
+  text-decoration: none;
+  color: #333;
+  padding: 20px;
+  width: 30px;
+  height: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out;
+  justify-content: center;
+  text-decoration: none;
+  background-color:#d4d3d3;
+}
+
+.back-button:hover {
+  background-color: #eee;
+}
+
+
+.photo-item {
+  margin-left: 10%; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  border-radius: 5px; 
+  overflow: hidden;
+  font-size: 140%;
+}
+
+.photo-item img:first-child {
+  width: 100%;
+  object-fit: cover;
+}
   
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #fff;
-    background-color: #007bff;
-    border: 2px solid #007bff;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-  }
-  
-  button:active {
-    background-color: #003d80;
-    border-color: #003d80;
-  }
+
+/* HTML: <div class="loader"></div> */
+.loader {
+width: 50px;
+aspect-ratio: 1;
+display: grid;
+border-radius: 50%;
+background:
+  linear-gradient(0deg ,rgb(0 0 0/50%) 30%,#0000 0 70%,rgb(0 0 0/100%) 0) 50%/8% 100%,
+  linear-gradient(90deg,rgb(0 0 0/25%) 30%,#0000 0 70%,rgb(0 0 0/75% ) 0) 50%/100% 8%;
+background-repeat: no-repeat;
+animation: l23 1s infinite steps(12);
+}
+.loader::before,
+.loader::after {
+ content: "";
+ grid-area: 1/1;
+ border-radius: 50%;
+ background: inherit;
+ opacity: 0.915;
+ transform: rotate(30deg);
+}
+.loader::after {
+ opacity: 0.83;
+ transform: rotate(60deg);
+}
+@keyframes l23 {
+100% {transform: rotate(1turn)}
+}

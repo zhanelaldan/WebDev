@@ -1,44 +1,54 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, RouterModule} from "@angular/router";
-import {AlbumService} from "../album.service";
-import {Album} from "../models";
-import {CommonModule} from "@angular/common";
-import {FormsModule} from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { Albums } from '../models';
+import { AlbumsService } from '../albums.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-album-detail',
   standalone: true,
-  imports: [RouterModule, CommonModule, FormsModule],
+  imports: [RouterModule, CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './album-detail.component.html',
-  styleUrl: './album-detail.component.css'
+  styleUrls: ['./album-detail.component.css']
 })
-export class AlbumDetailComponent implements OnInit{
-  album!: Album;
-  loaded!: boolean;
-  newTitle!: string;
-  constructor(private route: ActivatedRoute,
-              private albumService: AlbumService) {
-  }
+export class AlbumDetailComponent implements OnInit {
+  album!: Albums;
+  updatedAlbum!: Albums;
+  loaded: boolean = false;
+  isUpdating: boolean = false;
 
-  ngOnInit() {
+  constructor(private route: ActivatedRoute,
+              private albumService: AlbumsService) { }
+
+  ngOnInit(): void {
     this.getAlbum();
   }
-  getAlbum(){
-    this.route.paramMap.subscribe((params)=> {
-      const albumId: number = Number(params.get('albumId'));
+
+  getAlbum() {
+    this.route.paramMap.subscribe((params) => {
+      const albumId = Number(params.get('albumId'));
       this.loaded = false;
-      this.albumService.getAlbum(albumId).subscribe((album)=>{
+      this.albumService.getAlbum(albumId).subscribe((album) => {
+        this.updatedAlbum =  { ...album};
         this.album = album;
         this.loaded = true;
-      })
+        this.updatedAlbum.title = '';
+      });
     })
   }
+ 
 
-  updateAlbum(){
-    this.album.title = this.newTitle;
-    this.albumService.updateAlbum(this.album).subscribe((album)=>{
-      this.album = album;
-    })
+  updateAlbum() {
+    this.isUpdating = true;
+    this.route.paramMap.subscribe((params) => {
+      const albumId = Number(params.get('albumId'));
+      this.albumService.updateAlbum(albumId, this.updatedAlbum).subscribe((updatedAlbum) => {
+        this.album = updatedAlbum;
+        this.isUpdating = false;
+        alert('Album updated successfully!');
+        this.updatedAlbum.title = ''; 
+      });
+    });
   }
-
 }

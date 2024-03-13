@@ -1,8 +1,17 @@
-<ul>
-  <li><a [routerLink]="['/home']">Home</a></li>
-  <li><a [routerLink]="['/about']">About</a></li>
-  <li><a [routerLink]="['/albums']">Albums</a> </li>
-</ul>
-
+<header class="main-header">
+  <h1>{{ title }}</h1> <nav>
+    <ul class="navigation-list">
+      <li>
+        <a [routerLink]="['/home']" class="nav-link">Home</a>
+      </li>
+      <li>
+        <a [routerLink]="['/about']" class="nav-link">About</a>
+      </li>
+      <li>
+        <a [routerLink]="['/albums']" class="nav-link">Albums</a>
+      </li>
+    </ul>
+  </nav>
+</header>
 
 <router-outlet></router-outlet>

@@ -1,17 +1,17 @@
+<fieldset class="row">
+  <label for="title"><h1>Title</h1></label>
+  <input type="text" [(ngModel)]="newAlbum.title" id="title" placeholder="Add">
+  <button (click)="addAlbum()" class="Add">Add album</button>
+</fieldset>
 <div class="container">
-    <fieldset>
-      <label for="title">Title</label>
-      <input type="text" [(ngModel)]="newAlbum.title" id="title">
-      <button (click)="addAlbum()">Add album</button>
-    </fieldset>
-  
-    <ul *ngIf="loaded; else loading" >
+  <ul *ngIf="loaded; else loading" id="list-container">
       <li *ngFor="let album of albums">
-        <a [routerLink]="['/albums', album.id]">{{album.id}} Album</a>
-        <button (click)="deleteAlbum(album.id)">x</button>
+          <a [routerLink]="['/albums', album.id]">{{album.id}}) {{album.title}}</a>
+          <button (click)="deleteAlbum(album.id)" class="delete-button">🗑</button>
       </li>
-    </ul>
-    <ng-template #loading>
-      <p>Albums are loading...</p>
-    </ng-template>
-  </div>
+  </ul>
+
+  <ng-template #loading>
+      <div class="loader"></div>
+  </ng-template>
+</div>

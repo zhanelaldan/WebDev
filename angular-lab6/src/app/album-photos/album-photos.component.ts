@@ -1,35 +1,35 @@
-import { Component } from '@angular/core';
-import {Album, AP} from "../models";
-import {ActivatedRoute, RouterLink} from "@angular/router";
-import {AlbumService} from "../album.service";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { AlbumsService } from '../albums.service';
+import { Photos, Albums } from '../models';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-album-photos',
   standalone: true,
-  imports: [
-    RouterLink
-  ],
+  imports: [RouterModule, CommonModule],
   templateUrl: './album-photos.component.html',
   styleUrl: './album-photos.component.css'
 })
-export class AlbumPhotosComponent {
-  album!: AP | undefined;
-  loaded!: boolean
+export class AlbumPhotosComponent implements OnInit {
+  photos!: Photos[];
+  loaded: boolean = false;
+
   constructor(private route: ActivatedRoute,
-              private albumService: AlbumService) {
+    private albumService: AlbumsService) { }
+
+  ngOnInit(): void {
+    this.getAlbumPhotos();
   }
 
-  ngOnInit() {
-    this.getAlbum();
-  }
-  getAlbum(){
+  getAlbumPhotos(){
+    this.loaded = false;
     this.route.paramMap.subscribe((params)=> {
-      const albumId: number = Number(params.get('albumId'));
-      this.loaded = false;
-      this.albumService.getAlbumPhoto(albumId).subscribe((albums)=>{
-        this.album = albums.find(el => el.id === albumId);
+      const albumId = Number(params.get('albumId'));
+      this.albumService.getAlbumPhotos(albumId).subscribe((photos)=> {
+        this.photos = photos;
         this.loaded = true;
-      })
-    })
-  }
+      });
+    });
+    }
 }
