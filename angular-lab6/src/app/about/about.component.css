@@ -2,10 +2,10 @@
     margin: 20px auto;
     max-width: 1000px;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #ffb6c1;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9; /* Цвет фона */
+    background-color: #db7093; /* Цвет фона */
   }
   
   .about-content {
@@ -22,10 +22,10 @@
   .about-list li {
     margin: 20px 0;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #fbd1d1;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: #fff; /* Цвет фона */
+    background-color: #fbd1d1; /* Цвет фона */
   }
   
   .about-list li img {
@@ -37,7 +37,7 @@
   .about-list li h3 {
     margin: 10px 0;
     font-size: 18px;
-    color: #333; /* Цвет текста */
+    color: #e75480; /* Цвет текста */
   }
   
   .about-list li p {
@@ -50,15 +50,15 @@
     display: block;
     padding: 10px 20px;
     font-size: 16px;
-    border: 1px solid #007bff;
+    border: 1px solid #ffc0cb;
     border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #ffc0cb;
+    color: #e75480;
     cursor: pointer;
     text-align: center; /* Выравнивание текста по центру */
     width: 200px; /* Ширина кнопки */
   }
   
   .contact-us-button:hover {
-    background-color: #0056b3; /* Изменение цвета при наведении */
+    background-color: #db7093; /* Изменение цвета при наведении */
   }

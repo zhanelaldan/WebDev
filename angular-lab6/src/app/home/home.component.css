@@ -58,9 +58,9 @@ body {
     margin: 20px auto; /* Центрируем кнопку по горизонтали */
     padding: 10px 20px; /* Внутренние отступы */
     font-size: 16px; /* Размер шрифта */
-    border: 1px solid #007bff; /* Граница */
+    border: 1px solid #e75480; /* Граница */
     border-radius: 5px; /* Скругление углов */
-    background-color: #007bff; /* Цвет фона */
+    background-color: #e75480; /* Цвет фона */
     color: #fff; /* Цвет текста */
     cursor: pointer; /* Курсор при наведении */
     text-align: center; /* Выравнивание текста по центру */
