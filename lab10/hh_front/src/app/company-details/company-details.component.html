@@ -1,0 +1,26 @@
+<h1>Company Details</h1>
+
+<h3>ID : {{company.id}}</h3>  <br>
+<h3>Name : {{company.name}}</h3> <br>
+<h3>Description : {{company.description}}</h3> <br>
+<h3>City : {{company.city}}</h3> <br>
+<h3>Address : {{company.address}}</h3> <br>
+
+
+<button id="edit" *ngIf="!edit" (click)="edit=!edit" >Edit</button>
+
+  <div *ngIf="edit" id="edit-form">
+    <label for="name">Name: </label>
+    <input type="text" name="name" [(ngModel)]="editableCompany.name">
+
+    <label for="description">Description: </label>
+    <input type="text" name="description" [(ngModel)]="editableCompany.description">
+
+    <label for="city">City: </label>
+    <input type="text" name="city" [(ngModel)]="editableCompany.city">
+
+    <label for="address">Address: </label>
+    <input type="text" name="address" [(ngModel)]="editableCompany.address">
+
+    <button id="save" (click)="saveChanges()">Save Changes</button>
+  </div>
