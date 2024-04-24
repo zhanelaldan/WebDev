@@ -1,29 +1,29 @@
 <div>
-    <h2>New company</h2>
-  
-    <div id="new-company-form">
-      <label for="name">Name: </label>
-      <input type="text" name="name" [(ngModel)]="newCompany.name">
-  
-      <label for="description">Description: </label>
-      <input type="text" name="description" [(ngModel)]="newCompany.description">
-  
-      <label for="city">City: </label>
-      <input type="text" name="city" [(ngModel)]="newCompany.city">
-  
-      <label for="address">Address: </label>
-      <input type="text" name="address" [(ngModel)]="newCompany.address">
-  
-      <button class="add" (click)="createCompany()">Add</button>
-    </div>
+  <h2>New company</h2>
+
+  <div id="new-company-form">
+    <label for="name">Name: </label>
+    <input type="text" name="name" [(ngModel)]="newCompany.name">
+
+    <label for="description">Description: </label>
+    <input type="text" name="description" [(ngModel)]="newCompany.description">
+
+    <label for="city">City: </label>
+    <input type="text" name="city" [(ngModel)]="newCompany.city">
+
+    <label for="address">Address: </label>
+    <input type="text" name="address" [(ngModel)]="newCompany.address">
+
+    <button class="add" (click)="createCompany()">Add</button>
   </div>
-  
-  <h2>Company List</h2>
-  
-  <ul>
-    <li *ngFor="let company of companies" class="company">
-      id-{{company.id}}. <a routerLink="/companies/{{company.id}}" class="company-name">{{company.name}}</a>
-      <a routerLink="/companies/{{company.id}}/vacancies" class="comp-vacancies">(vacancies)</a>
-      <button class="delete" (click)="deleteCompany(company.id)"> delete </button>
-    </li>
-  </ul>
+</div>
+
+<h2>Company List</h2>
+
+<ul>
+  <li *ngFor="let company of companies" class="company">
+    id-{{company.id}}. <a routerLink="/companies/{{company.id}}" class="company-name">{{company.name}}</a>
+    <a routerLink="/companies/{{company.id}}/vacancies" class="comp-vacancies">(vacancies)</a>
+    <button class="delete" (click)="deleteCompany(company.id)"> delete </button>
+  </li>
+</ul>
